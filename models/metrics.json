@@ -1,0 +1,59 @@
+{
+  "cleaning": {
+    "rows_raw": 32581,
+    "duplicates_removed": 165,
+    "impossible_age_removed": 5,
+    "impossible_emp_length_removed": 2,
+    "missing_emp_length": 887,
+    "missing_loan_int_rate": 3094,
+    "rows_clean": 32409
+  },
+  "comparison": {
+    "Logistic Regression": {
+      "accuracy": 0.806,
+      "precision": 0.539,
+      "recall": 0.782,
+      "f1": 0.638,
+      "roc_auc": 0.872
+    },
+    "Decision Tree": {
+      "accuracy": 0.88,
+      "precision": 0.709,
+      "recall": 0.769,
+      "f1": 0.738,
+      "roc_auc": 0.898
+    },
+    "Random Forest": {
+      "accuracy": 0.923,
+      "precision": 0.882,
+      "recall": 0.751,
+      "f1": 0.811,
+      "roc_auc": 0.934
+    }
+  },
+  "best_model": "Random Forest",
+  "risk_bands": {
+    "Low Risk": {
+      "applicants": 4636,
+      "actual_default_rate": 0.0518,
+      "avg_pd": 0.0524
+    },
+    "Medium Risk": {
+      "applicants": 742,
+      "actual_default_rate": 0.1968,
+      "avg_pd": 0.209
+    },
+    "High Risk": {
+      "applicants": 1104,
+      "actual_default_rate": 0.9348,
+      "avg_pd": 0.9378
+    }
+  },
+  "n_train": 25927,
+  "n_test": 6482,
+  "calibrated_roc_auc": 0.9311775424078146,
+  "thresholds": {
+    "approve_below": 0.15,
+    "reject_from": 0.4
+  }
+}
